@@ -1,0 +1,329 @@
+{
+  "incident_id": "DEMO-CONGESTION",
+  "status": "diagnosed",
+  "suspected_root_cause": "High link utilization and queue drops, potentially accompanied by packet loss or delay, suggest network congestion.",
+  "confidence": 0.72,
+  "affected_devices": [
+    "RTR_1",
+    "SW_1"
+  ],
+  "supporting_evidence": [
+    {
+      "metric": "latency_ms",
+      "value": 280.0,
+      "interpretation": "Elevated latency detected: 280.0 ms"
+    },
+    {
+      "metric": "packet_loss_pct",
+      "value": 5.0,
+      "interpretation": "Elevated packet loss detected: 5.0%"
+    },
+    {
+      "metric": "jitter_ms",
+      "value": 45.0,
+      "interpretation": "Elevated jitter detected: 45.0 ms"
+    },
+    {
+      "metric": "link_utilization_pct",
+      "value": 94.0,
+      "interpretation": "High link utilization detected: 94.0%"
+    },
+    {
+      "metric": "cpu_usage_pct",
+      "value": 96.0,
+      "interpretation": "High CPU usage detected: 96.0%"
+    },
+    {
+      "metric": "queue_drops",
+      "value": 250,
+      "interpretation": "Elevated queue drops detected: 250"
+    },
+    {
+      "metric": "interface_errors",
+      "value": 80,
+      "interpretation": "Elevated interface errors detected: 80"
+    },
+    {
+      "metric": "topology_neighbors",
+      "value": [
+        "SW_1"
+      ],
+      "interpretation": "Topology lists 1 neighboring device(s) for RTR_1."
+    }
+  ],
+  "alternative_causes": [
+    "device_cpu_overload",
+    "interface_errors",
+    "interface_queue_congestion",
+    "jitter",
+    "latency_degradation",
+    "packet_loss"
+  ],
+  "ranked_alternative_causes": [
+    {
+      "rank": 1,
+      "cause": "device_cpu_overload",
+      "score": 1.6,
+      "supporting_metrics": [
+        "cpu_usage_pct"
+      ]
+    },
+    {
+      "rank": 2,
+      "cause": "interface_errors",
+      "score": 1.6,
+      "supporting_metrics": [
+        "interface_errors"
+      ]
+    },
+    {
+      "rank": 3,
+      "cause": "interface_queue_congestion",
+      "score": 1.6,
+      "supporting_metrics": [
+        "queue_drops"
+      ]
+    },
+    {
+      "rank": 4,
+      "cause": "jitter",
+      "score": 1.6,
+      "supporting_metrics": [
+        "jitter_ms"
+      ]
+    },
+    {
+      "rank": 5,
+      "cause": "latency_degradation",
+      "score": 1.6,
+      "supporting_metrics": [
+        "latency_ms"
+      ]
+    },
+    {
+      "rank": 6,
+      "cause": "packet_loss",
+      "score": 1.6,
+      "supporting_metrics": [
+        "packet_loss_pct"
+      ]
+    }
+  ],
+  "recommended_actions": [
+    "Inspect traffic patterns and identify high-volume flows.",
+    "Consider traffic shaping or increasing link capacity."
+  ],
+  "evidence_sources": [
+    "connectivity_agent",
+    "infrastructure_agent",
+    "performance_agent"
+  ],
+  "limitations": [],
+  "root_cause": "congestion",
+  "severity": "High",
+  "root_cause_explanation": "High link utilization and queue drops, potentially accompanied by packet loss or delay, suggest network congestion.",
+  "confidence_explanation": "Several causes have similar evidence scores, so the leading cause is not clearly separated from alternatives.",
+  "data_completeness": 1.0,
+  "evidence": [
+    {
+      "agent_id": "performance_agent",
+      "metric": "latency_ms",
+      "value": 280.0,
+      "unit": "ms",
+      "severity": "high",
+      "interpretation": "Elevated latency detected: 280.0 ms"
+    },
+    {
+      "agent_id": "performance_agent",
+      "metric": "packet_loss_pct",
+      "value": 5.0,
+      "unit": "%",
+      "severity": "high",
+      "interpretation": "Elevated packet loss detected: 5.0%"
+    },
+    {
+      "agent_id": "performance_agent",
+      "metric": "jitter_ms",
+      "value": 45.0,
+      "unit": "ms",
+      "severity": "high",
+      "interpretation": "Elevated jitter detected: 45.0 ms"
+    },
+    {
+      "agent_id": "performance_agent",
+      "metric": "link_utilization_pct",
+      "value": 94.0,
+      "unit": "%",
+      "severity": "high",
+      "interpretation": "High link utilization detected: 94.0%"
+    },
+    {
+      "agent_id": "infrastructure_agent",
+      "metric": "cpu_usage_pct",
+      "value": 96.0,
+      "unit": "%",
+      "severity": "high",
+      "interpretation": "High CPU usage detected: 96.0%"
+    },
+    {
+      "agent_id": "infrastructure_agent",
+      "metric": "queue_drops",
+      "value": 250,
+      "unit": null,
+      "severity": "high",
+      "interpretation": "Elevated queue drops detected: 250"
+    },
+    {
+      "agent_id": "infrastructure_agent",
+      "metric": "interface_errors",
+      "value": 80,
+      "unit": null,
+      "severity": "high",
+      "interpretation": "Elevated interface errors detected: 80"
+    },
+    {
+      "agent_id": "connectivity_agent",
+      "metric": "topology_neighbors",
+      "value": [
+        "SW_1"
+      ],
+      "unit": null,
+      "severity": "normal",
+      "interpretation": "Topology lists 1 neighboring device(s) for RTR_1."
+    }
+  ],
+  "evidence_sources_detail": [
+    {
+      "agent_id": "performance_agent",
+      "metric": "latency_ms"
+    },
+    {
+      "agent_id": "performance_agent",
+      "metric": "packet_loss_pct"
+    },
+    {
+      "agent_id": "performance_agent",
+      "metric": "jitter_ms"
+    },
+    {
+      "agent_id": "performance_agent",
+      "metric": "link_utilization_pct"
+    },
+    {
+      "agent_id": "infrastructure_agent",
+      "metric": "cpu_usage_pct"
+    },
+    {
+      "agent_id": "infrastructure_agent",
+      "metric": "queue_drops"
+    },
+    {
+      "agent_id": "infrastructure_agent",
+      "metric": "interface_errors"
+    },
+    {
+      "agent_id": "connectivity_agent",
+      "metric": "topology_neighbors"
+    }
+  ],
+  "agent_messages": [
+    {
+      "incident_id": "DEMO-CONGESTION",
+      "agent_id": "performance_agent",
+      "findings": [
+        {
+          "metric": "latency_ms",
+          "value": 280.0,
+          "severity": "high",
+          "interpretation": "Elevated latency detected: 280.0 ms",
+          "unit": "ms"
+        },
+        {
+          "metric": "packet_loss_pct",
+          "value": 5.0,
+          "severity": "high",
+          "interpretation": "Elevated packet loss detected: 5.0%",
+          "unit": "%"
+        },
+        {
+          "metric": "jitter_ms",
+          "value": 45.0,
+          "severity": "high",
+          "interpretation": "Elevated jitter detected: 45.0 ms",
+          "unit": "ms"
+        },
+        {
+          "metric": "link_utilization_pct",
+          "value": 94.0,
+          "severity": "high",
+          "interpretation": "High link utilization detected: 94.0%",
+          "unit": "%"
+        }
+      ],
+      "probable_causes": [
+        "packet_loss",
+        "congestion",
+        "latency_degradation",
+        "jitter"
+      ],
+      "confidence": 0.8,
+      "limitations": [
+        "Diagnosis is based only on the supplied telemetry."
+      ]
+    },
+    {
+      "incident_id": "DEMO-CONGESTION",
+      "agent_id": "infrastructure_agent",
+      "findings": [
+        {
+          "metric": "cpu_usage_pct",
+          "value": 96.0,
+          "severity": "high",
+          "interpretation": "High CPU usage detected: 96.0%",
+          "unit": "%"
+        },
+        {
+          "metric": "queue_drops",
+          "value": 250,
+          "severity": "high",
+          "interpretation": "Elevated queue drops detected: 250",
+          "unit": null
+        },
+        {
+          "metric": "interface_errors",
+          "value": 80,
+          "severity": "high",
+          "interpretation": "Elevated interface errors detected: 80",
+          "unit": null
+        }
+      ],
+      "probable_causes": [
+        "device_cpu_overload",
+        "interface_queue_congestion",
+        "interface_errors"
+      ],
+      "confidence": 0.8,
+      "limitations": [
+        "Infrastructure analysis is limited to the supplied device metrics."
+      ]
+    },
+    {
+      "incident_id": "DEMO-CONGESTION",
+      "agent_id": "connectivity_agent",
+      "findings": [
+        {
+          "metric": "topology_neighbors",
+          "value": [
+            "SW_1"
+          ],
+          "severity": "normal",
+          "interpretation": "Topology lists 1 neighboring device(s) for RTR_1.",
+          "unit": null
+        }
+      ],
+      "probable_causes": [],
+      "confidence": 0.6,
+      "limitations": []
+    }
+  ]
+}

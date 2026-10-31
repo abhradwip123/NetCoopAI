@@ -1,0 +1,145 @@
+{
+  "incident_id": "DEMO-NORMAL",
+  "status": "insufficient_evidence",
+  "suspected_root_cause": "Insufficient evidence to explain the likely cause.",
+  "confidence": 0.0,
+  "affected_devices": [
+    "RTR_1",
+    "SW_1"
+  ],
+  "supporting_evidence": [
+    {
+      "metric": "performance",
+      "value": "within_thresholds",
+      "interpretation": "No supplied performance metric crossed the configured thresholds."
+    },
+    {
+      "metric": "infrastructure",
+      "value": "within_thresholds",
+      "interpretation": "No supplied infrastructure metric crossed the configured thresholds."
+    },
+    {
+      "metric": "topology_neighbors",
+      "value": [
+        "SW_1"
+      ],
+      "interpretation": "Topology lists 1 neighboring device(s) for RTR_1."
+    }
+  ],
+  "alternative_causes": [],
+  "ranked_alternative_causes": [],
+  "recommended_actions": [
+    "Collect additional telemetry and inspect device logs."
+  ],
+  "evidence_sources": [
+    "connectivity_agent",
+    "infrastructure_agent",
+    "performance_agent"
+  ],
+  "limitations": [
+    "Insufficient evidence for a reliable diagnosis."
+  ],
+  "root_cause": "undetermined",
+  "severity": "Low",
+  "root_cause_explanation": "Insufficient evidence to explain the likely cause.",
+  "confidence_explanation": "No cause received sufficient supporting evidence.",
+  "data_completeness": 1.0,
+  "evidence": [
+    {
+      "agent_id": "performance_agent",
+      "metric": "performance",
+      "value": "within_thresholds",
+      "unit": null,
+      "severity": "normal",
+      "interpretation": "No supplied performance metric crossed the configured thresholds."
+    },
+    {
+      "agent_id": "infrastructure_agent",
+      "metric": "infrastructure",
+      "value": "within_thresholds",
+      "unit": null,
+      "severity": "normal",
+      "interpretation": "No supplied infrastructure metric crossed the configured thresholds."
+    },
+    {
+      "agent_id": "connectivity_agent",
+      "metric": "topology_neighbors",
+      "value": [
+        "SW_1"
+      ],
+      "unit": null,
+      "severity": "normal",
+      "interpretation": "Topology lists 1 neighboring device(s) for RTR_1."
+    }
+  ],
+  "evidence_sources_detail": [
+    {
+      "agent_id": "performance_agent",
+      "metric": "performance"
+    },
+    {
+      "agent_id": "infrastructure_agent",
+      "metric": "infrastructure"
+    },
+    {
+      "agent_id": "connectivity_agent",
+      "metric": "topology_neighbors"
+    }
+  ],
+  "agent_messages": [
+    {
+      "incident_id": "DEMO-NORMAL",
+      "agent_id": "performance_agent",
+      "findings": [
+        {
+          "metric": "performance",
+          "value": "within_thresholds",
+          "severity": "normal",
+          "interpretation": "No supplied performance metric crossed the configured thresholds.",
+          "unit": null
+        }
+      ],
+      "probable_causes": [],
+      "confidence": 0.6,
+      "limitations": [
+        "Diagnosis is based only on the supplied telemetry."
+      ]
+    },
+    {
+      "incident_id": "DEMO-NORMAL",
+      "agent_id": "infrastructure_agent",
+      "findings": [
+        {
+          "metric": "infrastructure",
+          "value": "within_thresholds",
+          "severity": "normal",
+          "interpretation": "No supplied infrastructure metric crossed the configured thresholds.",
+          "unit": null
+        }
+      ],
+      "probable_causes": [],
+      "confidence": 0.6,
+      "limitations": [
+        "Infrastructure analysis is limited to the supplied device metrics."
+      ]
+    },
+    {
+      "incident_id": "DEMO-NORMAL",
+      "agent_id": "connectivity_agent",
+      "findings": [
+        {
+          "metric": "topology_neighbors",
+          "value": [
+            "SW_1"
+          ],
+          "severity": "normal",
+          "interpretation": "Topology lists 1 neighboring device(s) for RTR_1.",
+          "unit": null
+        }
+      ],
+      "probable_causes": [],
+      "confidence": 0.6,
+      "limitations": []
+    }
+  ]
+}

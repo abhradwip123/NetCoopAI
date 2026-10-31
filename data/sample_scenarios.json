@@ -1,0 +1,48 @@
+
+[
+  {
+    "incident_id": "DEMO-NORMAL",
+    "device_id": "RTR_1",
+    "status": "up",
+    "metrics": {
+      "latency_ms": 20,
+      "packet_loss_pct": 0,
+      "jitter_ms": 5,
+      "link_utilization_pct": 40,
+      "cpu_usage_pct": 30,
+      "memory_usage_pct": 45,
+      "queue_drops": 0,
+      "interface_errors": 0
+    },
+    "topology": {
+      "neighbors": ["SW_1"]
+    }
+  },
+  {
+    "incident_id": "DEMO-CONGESTION",
+    "device_id": "RTR_1",
+    "status": "up",
+    "metrics": {
+      "latency_ms": 280,
+      "packet_loss_pct": 5,
+      "jitter_ms": 45,
+      "link_utilization_pct": 94,
+      "cpu_usage_pct": 96,
+      "memory_usage_pct": 72,
+      "queue_drops": 250,
+      "interface_errors": 80
+    },
+    "topology": {
+      "neighbors": ["SW_1"]
+    }
+  },
+  {
+    "incident_id": "DEMO-OUTAGE",
+    "device_id": "RTR_1",
+    "status": "down",
+    "metrics": {},
+    "topology": {
+      "neighbors": ["SW_1"]
+    }
+  }
+]
